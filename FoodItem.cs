@@ -19,7 +19,24 @@ namespace Mission3Assignment
             this.expirationDate = exp;
         }
 
-        // Print List of Current Food Items
+        public string getName()
+        {
+            return this.name;
+        }
 
+        public string getCategory()
+        {
+            return this.category;
+        }
+
+        public int getQuantity()
+        {
+            return this.quantity;
+        }
+
+        public DateTime getExpirationDate()
+        {
+            return this.expirationDate;
+        }
     }
 }
