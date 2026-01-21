@@ -1,4 +1,7 @@
-﻿// Rocky Lane
+﻿/*
+ * Author: Rocky Lane
+ * This Program creates a list of FoodItems that keep track of information for the inventory of a food bank.
+ */
 
 using Mission3Assignment;
 
@@ -26,8 +29,8 @@ while (running)
             string category = Console.ReadLine();
 
             Console.Write("Enter quantity: ");
-            string iquantity = Console.ReadLine();
-            if (!int.TryParse(iquantity, out int quantity))
+            string sQuantity = Console.ReadLine();
+            if (!int.TryParse(sQuantity, out int quantity))
             {
                 Console.WriteLine("Invalid quantity. Please enter a valid number.");
                 Console.WriteLine();
@@ -35,7 +38,13 @@ while (running)
             }
 
             Console.Write("Enter expiration date (yyyy-mm-dd): ");
-            DateTime expDate = DateTime.Parse(Console.ReadLine());
+            string sDate = Console.ReadLine();
+            if (!DateTime.TryParse(sQuantity, out DateTime expDate))
+            {
+                Console.WriteLine("Invalid quantity. Please enter a valid number.");
+                Console.WriteLine();
+                break;
+            }
 
             FoodItem newItem = new FoodItem(name, category, quantity, expDate);
             foodItems.Add(newItem);
@@ -94,7 +103,7 @@ while (running)
             break;
 
         default:
-            Console.WriteLine("Invalid choice. Please try again.");
+            Console.WriteLine("Invalid choice. Please try again and make sure you entered a valid number (1-4).");
             Console.WriteLine();
             break;
     }

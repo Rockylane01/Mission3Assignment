@@ -6,10 +6,10 @@ namespace Mission3Assignment
 {
     internal class FoodItem
     {
-        string name = "";
-        string category = "";
-        int quantity = 0;
-        DateTime expirationDate = DateTime.Now;
+        private string name = "";
+        private string category = "";
+        private int quantity = 0;
+        private DateTime expirationDate = DateTime.Now;
 
         public FoodItem(string name, string category, int quantity, DateTime exp) 
         {
