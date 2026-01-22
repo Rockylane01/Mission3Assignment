@@ -39,9 +39,9 @@ while (running)
 
             Console.Write("Enter expiration date (yyyy-mm-dd): ");
             string sDate = Console.ReadLine();
-            if (!DateTime.TryParse(sQuantity, out DateTime expDate))
+            if (!DateTime.TryParse(sDate, out DateTime expDate))
             {
-                Console.WriteLine("Invalid quantity. Please enter a valid number.");
+                Console.WriteLine("Invalid date. Please enter a valid date (yyyy-mm-dd).");
                 Console.WriteLine();
                 break;
             }
@@ -54,6 +54,7 @@ while (running)
             break;
 
         case "2":
+            Console.WriteLine();
             Console.WriteLine("Current Food Items:");
 
             if (foodItems.Count < 1)
@@ -67,6 +68,7 @@ while (running)
                 Console.WriteLine($"Category: {item.getCategory()}");
                 Console.WriteLine($"Quantity: {item.getQuantity()}");
                 Console.WriteLine($"Expiration Date: {item.getExpirationDate().ToShortDateString()}");
+                Console.WriteLine();
             }
             Console.WriteLine();
             break;
